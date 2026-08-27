@@ -1,104 +1,42 @@
 /**
- * Estructuras de datos
- * Que son? y por que son importantes?
- *
- * Son estructuras que nos ayudan a agrupar y/o ordernar datos
- * Para minipular estos datos de manera mas eficiente
- * Datos no representa nada por si lo
- * Datos juntos y dandoles contexto se vuelve informacion
- *
- *  * Array
- * Es una estructura de datos ordenada
- * !Importante
- * Los datos se identifican por un indice, el indice empieza a contar desde 0
- * El tamaño real se cuenta desde el 1
- *
- * !Importante pero particular de JS
- * Podemos guardar cualquier tipo de dato dentro del array, incluso combinaciones
- * Tienen tamaño dinamico
+ * For loop
+ * Es una estructura de control repetitiva
+ * El bloque de codigo dentro de ella se va a repetir n veces
+ * ? El bucle for cuenta con 3 partes dentro de los parentesis
+ * ? 1. Una variable que va actuar como contador, comun es que se llame i
+ * ? 2. Es la condicion de ejecucion, esto quiere decir la condicion que mientras sea verdadera, el bucle se va a ejecutar
+ * ? 3. El incremento del contador
+ * Nota
+ * Se suele usar mucho para recorrer arrays.
+ * Metodo para saber el tamaño de un array
+ * nombreArray.length
  */
 
-//definicion de un array
-const arrayVacio = [];
+const numeros = [
+  12, 45, 7, 89, 23, 56, 34, 78, 91, 10, 67, 32, 4, 76, 54, 21, 98, 43, 65, 11,
+  87, 29, 50, 73, 16, 94, 38, 61, 8, 82, 27, 69, 14, 95, 41, 58, 3, 77, 36, 84,
+  19, 63, 47, 90, 25, 71, 6, 53, 80, 31, 99, 42, 17, 68, 35, 86, 22, 74, 9, 57,
+  93, 40, 15, 62, 28, 81, 5, 70, 48, 96, 24, 59, 33, 88, 13, 66, 44, 79, 2, 55,
+  97, 30, 18, 72, 46, 85, 20, 64, 39, 92, 1, 52, 26, 75, 49, 83, 37, 60, 51,
+  100,
+];
+console.log(`el tamaño del array es ${numeros.length}`);
+for (let i = 0; i < numeros.length; i++) {
+  console.log(`El numero en la posicion ${i} es ${numeros[i]}`);
+}
 
-const arrayContenido = ["Alberto", 20, true];
-const months = ["Jan", "March", "April", "June"];
-/**obtencion de un elemento guardado en un array
- * notacion corchete
- */
-
-console.log(arrayContenido[1]);
-console.log(arrayContenido[0]);
-console.log(arrayContenido[3]);
+let total = 0;
+for (let c = 0; c < numeros.length; c++) {
+  // sintaxis tradicional
+  total = total + numeros[c];
+  console.log(`El valor actual del acumulado es ${total}`);
+  /* sintaxis abreviada
+  total += numeros[c]; */
+}
+console.log(`La suma de los 100 elementos del array es ${total}`);
 
 /**
- * Ingresar datos al array
- * Metodos
- * 1. Unshift para ingresar elementos al comienzo del array
- * 2. Push para ingresar elementos al final del array
+ * 1. Usar un for para recorrer el array de numeros
+ * 2. En cada iteracion mostrar en consola si
+ * el numero es par o impar
  */
-console.log("Array antes");
-console.log(arrayContenido);
-arrayContenido.unshift("Javier");
-console.log("Array despues");
-console.log(arrayContenido);
-
-console.log("Array antes");
-console.log(arrayContenido);
-arrayContenido.push("Daniel", false);
-console.log("Array despues");
-console.log(arrayContenido);
-
-/**
- * Eliminar datos
- * 1. Shift elimina y devuelve el elemento en la posicion 0
- * 2. Pop elimina y devuelve el ultimo elemento del array
- * Nota:
- * Lo que va dentro de los parentesis de un metodo o funcion
- * se conoce como argumento
- */
-
-console.log("Array antes");
-console.log(arrayContenido);
-// arrayContenido.shift();
-console.log(`Elemento eliminado ${arrayContenido.shift()}`);
-console.log("Array despues");
-console.log(arrayContenido);
-
-console.log("Array antes");
-console.log(arrayContenido);
-// arrayContenido.pop();
-console.log(`Elemento eliminado ${arrayContenido.pop()}`);
-console.log("Array despues");
-console.log(arrayContenido);
-
-/**
- * Reasignar el valor de un indice
- */
-let valorAnterior = arrayContenido[0];
-arrayContenido[0] = "Liz";
-arrayContenido[2] = "Josue";
-console.log("el valor anterior es: " + valorAnterior);
-console.log(`Resultado de la reasignacion de un elemento ${arrayContenido}`);
-console.log(arrayContenido);
-
-/**
- * Splice
- * Elimina elementos o agrega
- */
-console.log("======Splice");
-arrayContenido.splice(1, 1);
-console.log(arrayContenido);
-arrayContenido.splice(1, 2);
-console.log(arrayContenido);
-
-//agregar elementos
-months.splice(3, 0, "Mar");
-console.log(months);
-
-/*Splice tiene 3 partes que van dentro de los parentesis
-  (1,2,3)
-  1. Indica la posicion donde va a iniciar a eleminar o a agregar
-  2. Cuantos elementos vas a eliminar
-  3. Son elementos a agregar
-*/
