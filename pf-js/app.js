@@ -1,45 +1,19 @@
-//declarar la funcion
-function saludar() {
-  console.log("Hola");
-}
-
-//usar la funcion (invocar o llamar)
-saludar();
-saludar();
-saludar();
-
-//funcion con parametros
-function saludarConNombre(name, edad) {
-  console.log(`Hola ${name} mucho gusto 
-    en conocerte no sabia que tenias ${edad} años`);
-}
-
-//pasando argumentos a una funcion
-saludarConNombre("Josue", 32);
-saludarConNombre("Liz", 27);
-saludarConNombre(27, "hola");
-
 /**
- *
- * funcion que retorna algo
- * !Importante
- * Cuando usamos return
- * !1. Termina la ejecucion de la funcion
- * !2. el valor retornado debe ser ocupado o nunca
- *  !vamos a ver
- * */
-function multiplyToNumbers(a, b) {
-  if (typeof a == "number" && typeof b == "number") {
-    return a * b; //finaliza ejecucion
-  } else {
-    return "Por favor envia dos numeros"; //finaliza ejecucion
-  }
-  console.log("Nunca me vas a ver");
+ * Diferencia
+ * Hoisting
+ * Es un proceso por el cual las function declaration y las variables escritas con var, pasan a estar hasta arriba en el proceso de ejecucion.
+ * Function Expression y Arrow Function no pasan por este proceso
+ */
+
+console.log("function declaration " + multiplyNumbers(20, 6));
+const addNumber = function (a, b) {
+  return a + b;
+};
+
+const divideNumbers = (a, b) => a / b;
+
+function multiplyNumbers(a, b) {
+  return a * b;
 }
 
-//aqui no voy a ver nada
-multiplyToNumbers(2, 3);
-
-//imprimiendo el valor de retorno en consola
-console.log(multiplyToNumbers(3, 5));
-console.log(multiplyToNumbers(3, "josue"));
+console.log(divideNumbers(10, 2));
